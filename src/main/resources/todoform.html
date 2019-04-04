@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="#"
+          th:action="@{/process}"
+          th:object="${course}"
+          method="post">
+        <input type="hidden" th:field="*{id}"/>
+
+        Date:<input type="date" th:field="*{date}"/>
+        <span th:if="${#fields.hasErrors()}"
+              th:errors="*{date}"></span> <br />
+
+        Task:<input type="text" th:field="*{taskname}"/>
+
+    </form>
+</body>
+</html>
